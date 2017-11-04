@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h2>Latest Items </h2>
+<div class="item">
+{% for i in items %}
+	<h3>{{i.name}}</h3>
+
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class='body-container'>
+	<div class='form-align'>
+		{% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                                {% for message in messages %}
+                                        {{message}}
+                                {% endfor %}
+                        {% endif %}
+                {% endwith %}
+		<h2>Create Account </h2>
+		</br>
+		<form method='POST' action="{{url_for('signup')}}" onsubmit="return validateForm(this)">
+
+			<div class="row">
+				<div class="col-md-2"> <h4>E-mail* :</h4></div>
+				<div class="col-md-10"> <input type='text' size = '30' name='email'> </div>
+			</div>
+			</br>
+			<div class="row">
+				<div class="col-md-2"><h4>Username* :</h4></div> 
+				<div class="col-md-10"><input type='text' size = '30' name='username'></div>
+			</div>
+			</br>
+			<div class="row">
+                                <div class="col-md-2"><h4>First Name :</h4></div> 
+				<div class="col-md-10"><input type='text' size = '30' name='firstname'></div>
+			</div>
+			</br>
+			<div class="row">
+                                <div class="col-md-2"><h4> Last Name :</h4></div> 
+				<div class="col-md-10"><input type='text' size = '30' name='lastname'></div>
+			</div>
+			</br>
+			<div class="row">
+                                <div class="col-md-2"> <h4>Password* :</h4></div>
+ 				<div class="col-md-10"><input type='password' size = '30' name='pwd'> </div>
+			</div>
+			</br>
+			<div class="row">
+                                <div class="col-md-2"><h4> Re-Password* :</h4> </div> 
+				<div class="col-md-10"><input type='password' size = '30' name='pwd_confirm'></div>
+			</div>
+			</br>
+			<input type='submit' value='Signup'>
+			<a href="{{url_for('catalogHandler')}}">Cancel</a>
+
+		</form>
+	</div>
+</div>
+
+<script>
+	function validateForm(form) {
+		var emailField = form.email.value;
+		var username = form.username.value;
+		var passwordField = form.pwd.value;
+		var passwordConfirmField = form.pwd_confirm.value;
+		if(emailField.length == 0 || emailField == "") {
+			alert("E-mail cannot be empty");
+			return false;
+		}
+
+		if(username.length == 0 || username == "") {
+
+			alert("Username cannot be empty");
+			return false;
+		}
+		if(passwordField.length == 0 || passwordField == "") {
+			alert("password cannot be empty!");
+			return false;
+		}
+	
+		if(passwordField != passwordConfirmField) {
+			alert("password not match");
+			return false;
+		}
+		return true;
+	}
+
+</script>
+
+
+{% endblock %}

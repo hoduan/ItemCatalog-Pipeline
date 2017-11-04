@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class='body-container'>
+	<div class="row form-align">
+		<div class="col-md-6"><h2>Categories<h2>
+                        {% for i in categories %}
+                                <h3><a href="{{url_for('showItemList', category_name=i.name)}}">{{i.name}}</a></h3>
+                        {% endfor %}
+
+		</div>
+		<div class="col-md-6"><h2>{{category}}({{count}} itmes)</h2>
+			{% for i in items %}
+                                <h3><a href='{{url_for('showItem', category_name=category, item_name=i.name)}}'>{{i.name}}</a></h3>
+                        {% endfor %}
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

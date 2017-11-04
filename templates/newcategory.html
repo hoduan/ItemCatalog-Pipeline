@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class='body-container'>
+<div class='form-align'>
+	{% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                                {% for message in messages %}
+                                        {{message}}
+                                {% endfor %}
+                        {% endif %}
+        {% endwith %}
+
+<form method = "POST" action="{{url_for('newCategory')}}" onsubmit="return validateForm(this)">
+	<p><h4> Name: </h4></p>
+	<p><input type='text' size='30' name='name'></p>
+	<p><h4> Description: </h4></p>
+        <p><input type='text' size='50' name='desc'></p>
+	
+	<input type='submit' value='Add'>
+</form>
+</div>
+</div>
+
+<script>
+        function validateForm(form) {
+                var nameField = form.name.value;
+                if(nameField.length == 0 || nameField == "") {
+                        alert("Name cannot be empty");
+                        return false;
+                }
+        
+                return true;
+        }
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class='doby-container'>
+	<div class='form-align'>
+		<h2> Delete Category</h2>
+		<p>Are you sure you want to delete <b>{{category.name}}</b> ? </p>
+		<form id='delete' method="POST" action="{{url_for('deleteCategory', category_name=category.name)}}">
+			<button id = 'btnSubmit' type="button" value='submit'> Submit</button>
+		</form>
+
+	</div>
+</div>
+<script>
+	var form=document.getElementById("delete");
+	document.getElementById("btnSubmit").addEventListener("click", function () {
+  		form.submit();
+	});
+</script>
+
+{% endblock %}

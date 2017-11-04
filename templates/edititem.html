@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class='body-container'>
+<div class='form-align'>
+<form method = "POST" action="{{url_for('editItem', category_name=category.name, item_name=item.name)}}">
+        <h4> Title: </h4>
+        <p><input type='text' size='30' name='name' placeholder='{{item.name}}'></p>
+        <h4> Description: </h4>
+        <p><input type='text' size='50' name='desc' placeholder='{{item.description}}'></p>
+        <h4>Category</h4>
+        <select name='select'>
+		<option value='{{category.id}}' disabled selected hidden> {{category.name}}</option>
+                {% for i in categories %}
+                        <option value={{i.id}}> {{i.name}}</option>
+
+                {% endfor %}
+        </select>
+        <input type='submit' value='Edit'>
+	<a href='{{url_for('catalogHandler')}}'>Cancel</a>
+</form>
+</div>
+</div>
+
+
+
+{% endblock %}

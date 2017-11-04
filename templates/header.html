@@ -1,0 +1,20 @@
+
+<div class='top-menu'>
+<div class='menu-container'>
+	<ul class="list-grid row">
+		<li class="col-md-6 text-left">
+			<a href="{{url_for('catalogHandler')}}"><h1>Catalog Site </h1></a>
+		</li><li class="col-md-6 text-right">
+                	{%if 'username' not in session %}
+                       		<h1> <a background-color='blue' href="{{url_for('login')}}">Login</a></h1>
+                	{% else %}
+				<h1>
+					{{session['username']}}
+					<a href="{{url_for('logout')}}">Logout</a>
+				</h1>
+               	 		
+			{% endif %}
+        	</li>
+	</ul>
+</div> 
+</div>

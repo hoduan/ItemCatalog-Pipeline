@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class='body-container'>
+	<div class='form-align'>
+		<h2>{{item.name}} <i>({{category.name}})</i></h2>
+		<p> {{item.description}}</p>
+		<div calss="todo">
+			<a href="{{url_for('editItem', category_name=category.name, item_name=item.name)}}">Edit</a>
+			<a href="{{url_for('deleteItem', category_name=category.name, item_name=item.name)}}">Delete</a>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+

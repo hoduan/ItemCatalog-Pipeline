@@ -1,0 +1,102 @@
+h1, h2, h3, h4, h5, h6 {
+	line-height: 0.5
+}
+
+
+h1 {
+	color: white;
+	font-size: 36px;
+}
+
+
+h2 {
+	color: #006064;
+	font-size: 24px;
+}
+
+h3, a {
+	color: red;
+	font-size: 16px;
+
+}
+
+
+i {
+	color: gray;
+}
+
+h4 {
+	color: gray;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+body {
+	background-color: #e6e7f4;
+	display: flex;
+}
+.top-menu {
+	padding-bottom: 5px;
+	background: #006064;
+
+}
+
+.container {
+	display: block;
+	margin: auto;
+}
+
+.body-container {
+	width: 1000px;
+	display: block;
+	background-color: white;
+	position: relative;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu-container {
+        width: 1000px;
+        display: block;
+        position: relative;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+
+.form-align {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 5px;
+	padding: 5px;
+}
+.login {
+    position : absolute;
+    width    : 200px;
+    height   : 200px;
+    left     : 50%;
+    top      : 50%;
+    margin-left : -100px; /* half of the width  */
+    margin-top  : -100px; /* half of the height */
+}
+
+.form-center {
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 20px
+}
+ul.list-grid {
+  display: block;
+  list-style: none;
+  padding: 0;
+  font-size: 0;
+}
+  ul.list-grid > li {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+}
